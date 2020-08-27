@@ -1,0 +1,45 @@
+
+import java.io.*;
+import java.util.Scanner;
+class CustomException extends Exception{
+    private String playerName;
+    private int playerAge;
+    CustomException(String name,int age)
+    {
+        this.playerName=name;
+        this.playerAge=age;
+    }
+    public String toString()
+    {
+        return "InvalidAgeRangeException";
+    }
+}
+class Main {
+    static void ageValidate(String name,int age) throws CustomException
+    {
+                if(age>=19)
+                    {
+                        System.out.println("Player Name: "+name);
+                        System.out.println("Player Age: "+age);
+                    }
+                else{
+                     throw new CustomException(name,age);  
+                }
+    }
+	public static void main (String[] args) {
+	    Scanner input=new Scanner(System.in);
+		System.out.println("Enter the player name: ");
+		String name=input.nextLine();
+		System.out.println("Enter the player age: ");
+		int age=input.nextInt();
+		try {
+
+		ageValidate(name,age);
+		
+	        }
+	   catch (Exception e)
+	   {
+	      System.out.println("CustomException :"+e);
+	   }
+	
+}}

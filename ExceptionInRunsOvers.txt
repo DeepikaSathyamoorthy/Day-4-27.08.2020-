@@ -1,0 +1,25 @@
+
+import java.io.*;
+import java.util.Scanner;
+class Main {
+	public static void main (String[] args) {
+	    Scanner input=new Scanner(System.in);
+		System.out.println("Enter the no of overs: ");
+		int overs=input.nextInt();
+		try {
+		int [] runs=new int[overs];
+		System.out.println("Enter the no of runs: ");
+		for(int i=0;i<overs;i++)
+		{
+		    runs[i]=input.nextInt();
+		    
+		}
+		System.out.println("Enter the over no: ");
+		int ovrCheck=input.nextInt();
+		    System.out.println("Runs :"+runs[ovrCheck-1]);
+		}
+		catch(Exception e ){
+		    System.out.println("Exception encountered in Main class "+ e);
+		}
+	}
+}
